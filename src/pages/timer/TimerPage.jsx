@@ -18,7 +18,7 @@ const TimerPage = () => {
         <section className="txt">
           <h4>{title} </h4>
           <p>{desc}</p>
-          <Link to="/home">
+          <Link to="/task">
             Done? Go Back to the Task List
           </Link>
         </section>
