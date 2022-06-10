@@ -3,7 +3,7 @@ import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import { Link } from 'react-router-dom';
 import "./Timer.css"
 
-const Timer = ({time=1,breakTime=1}) => {
+const Timer = ({time,breakTime}) => {
     time = time * 60;
     breakTime = breakTime * 60;
     const [play, setPlay] = useState(true)

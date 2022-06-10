@@ -6,12 +6,12 @@ import { useTask } from "../../context/task-context";
 const TimerPage = () => {
   const { id } = useParams();
   const { taskState } = useTask()
-  const {title,desc,time,breakTime} = taskState.taskList.filter((i) => i._id === id)
-  console.log(id)
-
+  const [task] = taskState.taskList.filter((i) => i._id === id)
+  const {title,breakTime,desc,time} = task
+  
   return (
     <div >
-      <main >
+       <main >
         <section>
           <Timer breakTime={breakTime} time={time} />
         </section>
