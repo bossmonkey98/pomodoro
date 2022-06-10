@@ -1,0 +1,27 @@
+.task{
+    padding: 3rem;
+    line-height: 2.2rem;
+    font-size: large;
+}
+
+.task-container{
+    background-color: var(--bgc);
+    padding: 1.5rem;
+    min-height:50vh;
+}
+
+.task-list,.add-task {
+    flex: 1;
+}
+
+.add-task{
+    text-align: end;
+    font-size:1.7rem;
+    color: var(--primary-color);
+}
+.add-task>i{
+    cursor: pointer;
+}
+.add-task>i:hover{
+    color: var(--CTA);
+}

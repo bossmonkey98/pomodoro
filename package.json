@@ -8,10 +8,12 @@
     "@testing-library/user-event": "^13.5.0",
     "dom": "^0.0.3",
     "react": "^18.1.0",
+    "react-countdown-circle-timer": "^3.0.9",
     "react-dom": "^18.1.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "router": "^1.3.7",
+    "uuid": "^8.3.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -39,7 +41,15 @@
     ]
   },
   "main": "index.js",
-  "repository": "https://github.com/bossmonkey98/pomodoro.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bossmonkey98/pomodoro.git"
+  },
   "author": "bossmonkey98 <47918140+bossmonkey98@users.noreply.github.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "bugs": {
+    "url": "https://github.com/bossmonkey98/pomodoro/issues"
+  },
+  "homepage": "https://github.com/bossmonkey98/pomodoro#readme"
 }

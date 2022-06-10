@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
 nav{
-    background-color: aliceblue;
+    background-color: var(--bgc);
     width:100%;
     height: 6rem;
     display: flex;
@@ -16,6 +16,7 @@ nav{
     align-items: center;
     margin-left: 2rem;
     color: var(--primary-color);
+    gap: 1rem;
 
 }
 
@@ -39,5 +40,5 @@ nav{
 }
 
 .mode>i:hover {
-    color: rgba(0, 0, 0, 0.466);
+    color:var(--CTA);
 }

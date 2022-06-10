@@ -12,7 +12,7 @@ const Header = () => {
         <h1>Focus</h1>
       </div>
       <div className="mode">
-        {theme === "light" ? <i class="bi bi-sun-fill" onClick={() => settheme("light")}></i> :
+        {theme === "dark" ? <i class="bi bi-sun-fill" onClick={() => settheme("light")}></i> :
           <i class="bi bi-moon-fill" onClick={() => settheme("dark")}></i>}
       </div>
       </nav>
