@@ -1,0 +1,38 @@
+.home{
+    display: flex;
+    align-items: center;
+}
+
+.desc{
+    flex: 1;
+    text-align: center;
+    align-self: center;
+}
+
+.img{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+.pic{
+    width: 20rem;
+    height:20rem;
+}
+
+.btn{
+    width: 6rem;
+    height:2.5rem;
+    margin: 12px;
+    background-color: var(--CTA);
+    border: none;
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+    font-size: 1rem;
+}
+
+.btn:hover{
+    transform: scale(1.1);
+    background-color: var(--CTAhover);
+}
