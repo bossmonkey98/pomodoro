@@ -4,6 +4,7 @@ import pic from "../../assets/target.png"
 import { Link } from 'react-router-dom'
 
 export const Home = () => {
+  document.title = "Focus";
   return (
     <div className='home'>
       <div className='desc'>

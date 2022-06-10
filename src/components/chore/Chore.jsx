@@ -1,16 +1,19 @@
 import React from 'react'
 import { useTask } from '../../context/task-context';
 import "./Chore.css"
+import {Link} from 'react-router-dom'
 
 export const Chore = ({task}) => {
   const { taskDispatch } = useTask()
-    
+    console.log(task)
     return (
-      <div key={task._id} className="chore">
+      <div className='chore'>
         <div className='title'>
+        <Link to="/timer" key={task._id}>
           <h4>
             {task.title}
-          </h4>
+            </h4>
+        </Link>
         </div>
   
         <div className='icons'>
