@@ -5,7 +5,8 @@ import { useTask } from '../../context/task-context'
 import {Chore} from "../../components/chore/Chore"
 
 const Task = () => {
-  const {taskState ,taskDispatch} = useTask()
+  const { taskState, taskDispatch } = useTask()
+  document.title = "Task | Focus";
   return (
       <div className='task'>
           <h1 style={{margin:"12px"}}>Welcome, User</h1>
@@ -22,7 +23,7 @@ const Task = () => {
         <div className='chore-list'>
               {taskState.taskList.length !== 0 && 
           taskState.taskList.map((task) =>
-            <Chore task={task} />)
+            <Chore task={task} key={task._id} />)
           }
         </div>
           </div>
