@@ -1,18 +1,21 @@
 import "./Timer.css";
-import { Link, useLocation } from "react-router-dom";
+import { Link,  useParams } from "react-router-dom";
 import { Timer } from "./Timer";
+import { useTask } from "../../context/task-context";
 
 const TimerPage = () => {
-    const location = useLocation();
-    const { title, time, breakTime, desc } = location.state?.task;
+  const { id } = useParams();
+  const { taskState } = useTask()
+  const {title,desc,time,breakTime} = taskState.taskList.filter((i) => i._id === id)
+  console.log(id)
 
   return (
-    <div>
+    <div >
       <main >
         <section>
           <Timer breakTime={breakTime} time={time} />
         </section>
-        <section>
+        <section className="txt">
           <h4>{title} </h4>
           <p>{desc}</p>
           <Link to="/home">

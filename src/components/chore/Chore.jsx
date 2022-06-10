@@ -9,7 +9,7 @@ export const Chore = ({task}) => {
     return (
       <div className='chore'>
         <div className='title'>
-        <Link to="/timer" key={task._id}>
+        <Link to={`/timer/${task._id}`} key={task._id}>
           <h4>
             {task.title}
             </h4>

@@ -1,8 +1,9 @@
 import React ,{ useState} from 'react'
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import { Link } from 'react-router-dom';
+import "./Timer.css"
 
-const Timer = ({time,breakTime}) => {
+const Timer = ({time=1,breakTime=1}) => {
     time = time * 60;
     breakTime = breakTime * 60;
     const [play, setPlay] = useState(true)
@@ -15,10 +16,11 @@ const Timer = ({time,breakTime}) => {
     const renderTaskTime = ({ remainingTime }) => {
         const minutes = prefixZero(Math.floor((remainingTime % 3600) / 60));
         const seconds = prefixZero(remainingTime % 60);
+      
         document.title = `${minutes}m: ${seconds}s Task`;
         return (
-            <div>
-                <p>{minutes} : {seconds}s</p>
+            <div style={{textAlign:"center"}}>
+                <p>{minutes}m: {seconds}s</p>
                 {
                     !play ? <p>Paused</p>
                         : <p>out of {time / 60}min remaining</p>
@@ -41,13 +43,13 @@ const Timer = ({time,breakTime}) => {
     };
     
     return (
-        <div>
+        <div className='timer-container'>
             {taskTime && (
         <CountdownCircleTimer
           isPlaying={play}
           size={300}
           duration={time}
-          colors={["#F2637E", "#6EBF8B", "#FF0000", "#FF0000"]}
+          colors={["#F2637E", "#F2637C", "#FF0000", "#FF0000"]}
           colorsTime={[time, time / 4, time / 6, 0]}
           key={key}
                 onComplete={() => {
@@ -64,7 +66,7 @@ const Timer = ({time,breakTime}) => {
           isPlaying={play}
           size={300}
           duration={breakTime}
-          colors={["#F2637E", "#6EBF8B", "#FF0000", "#FF0000"]}
+          colors={["#F2637E", "#F2637C", "#FF0000", "#FF0000"]}
           colorsTime={[breakTime, breakTime / 4, breakTime / 6, 0]}
           key={key + 1}
           onComplete={()=>setIsBreak(false)}
@@ -74,33 +76,40 @@ const Timer = ({time,breakTime}) => {
       )}
 
       {!isBreak && !taskTime && (
-        <div>
-          <h3
+        <div className='text'>
+          <button className='btn' style={{width:"8rem"}}
             onClick={()=>setTaskTime(true)}
           >
             Restart Timer
-          </h3>
+          </button>
 
           <Link to="/task">
             <h3 >Go to Tasks</h3>
           </Link>
         </div>
       )}
-            {!taskTime &&
-                <div>
+            {taskTime &&
+              <div className='play-icons'>
                     {!play ?
-                        <i class="bi bi-pause-fill"
+                        <i class="bi bi-pause-circle-fill" 
                             onClick={() => setPlay(false)}
                         >
                         </i> :
-                        <i class="bi bi-play-circle-fill"
-                            onClick={() => setPlay(true)}>
+                        <i class="bi bi-pause-circle"
+                            onClick={() => setPlay(false)}>
                         </i>
                     }
-                        < i class="bi bi-arrow-counterclockwise"
-                            onClick={() => setKey(key+5)}>
-                        </i>
-                </div>
+              {
+              play ?
+                  < i class="bi bi-play-circle-fill"  
+                    onClick={() => setPlay(true)}>
+                </i> :
+                <i class="bi bi-play-circle"
+                  onClick={()=>setPlay(true)}></i>
+              }
+              <i class="bi bi-arrow-counterclockwise" 
+                  onClick={()=>setKey(key + 5)}></i>
+              </div>
         }
 
             </div>
