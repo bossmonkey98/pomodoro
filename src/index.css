@@ -7,6 +7,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--secondary-color);
+  min-height: 100vh;
 }
 
 code {
@@ -14,16 +15,31 @@ code {
     monospace;
 }
 
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-:root{
-  --primary-color:#F2637E;
-  --secondary-color:rgb(103, 100, 100);
-  --CTA:#F2D230;
-  --shadow:rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  --bgc:aliceblue;
+:root {
+  --primary-color: #F2637E;
+  --secondary-color: rgb(103, 100, 100);
+  --CTA: #F2D230;
+  --shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  --bgc: #ddd;
 }
+
+#theme{
+  display: none;
+}
+
+#theme:checked~div {
+  filter: invert(100%);
+}
+
+input{
+  outline: none;
+  border: 1px solid black;
+  background-color:#ddd;
+}
+

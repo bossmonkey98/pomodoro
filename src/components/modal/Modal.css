@@ -16,6 +16,7 @@
     background-color: var(--bgc);
     padding: 12px;
     align-items: center;
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
 }
 
 .modal-content>input{
@@ -23,7 +24,6 @@
     margin: 12px 0;
     height: 2rem;
     padding: 5px;
-    border: 1px var(--secondary-color);
 }
 
 .break{
@@ -42,5 +42,5 @@
 }
 
 .short{
-    accent-color: var(--primary-color);
+    accent-color:1px solid var(--primary-color);
 }

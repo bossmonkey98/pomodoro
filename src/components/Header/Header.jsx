@@ -1,21 +1,30 @@
 import "./Header.css"
-
-import React, { useState } from 'react'
 import logo from "../../assets/target.png"
+import {Link} from 'react-router-dom'
 
-const Header = () => {
-  const [theme ,settheme] =useState("light")
+const Header = ({ mode }) => {
+  const { theme, setTheme } = mode
+
   return (
-      <nav>
-      <div className="logo">
+    <nav>
+      <Link to='/' className="logo">
         <img className="logo-img" src={logo} alt="logo" />
         <h1>Focus</h1>
-      </div>
+      </Link>
       <div className="mode">
-        {theme === "dark" ? <i class="bi bi-sun-fill" onClick={() => settheme("light")}></i> :
-          <i class="bi bi-moon-fill" onClick={() => settheme("dark")}></i>}
+        {theme ?
+          <i class="bi bi-sun-fill" onClick={() => {
+            console.log("!wtf")
+            setTheme(false)
+          }
+          }>
+          </i> :
+          <i class="bi bi-moon-fill" onClick={() =>
+            setTheme(true)
+          }>
+          </i>}
       </div>
-      </nav>
+    </nav>
   )
 }
 
