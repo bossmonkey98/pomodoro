@@ -1,7 +1,7 @@
 import { initialStateType, taskType } from "../context/task-context.type";
-import { actionType } from "./taskReducer.types";
+import { actionType} from "./taskReducer.types";
 
-export const taskReducer = (state: initialStateType, action: actionType) => {
+export const taskReducer = (state:initialStateType, action:actionType) => {
 
   switch (action.type) {
     case "TOGGLE_MODAL":

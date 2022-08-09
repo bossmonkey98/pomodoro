@@ -8,7 +8,7 @@ export type taskType = any | {
     breakTime: Number;
 }
 
-export type initialStateType = {
+export interface initialStateType {
     taskList: | taskType[];
     showModal: boolean;
     showTimer: boolean;

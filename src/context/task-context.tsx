@@ -16,12 +16,14 @@ const TaskProvider: React.FC<Props> = ({ children }) => {
   };
 
   const [taskState, taskDispatch] = useReducer(
-    taskReducer,
+    taskReducer as any,
     initialState
   );
 
   useEffect(() => {
+    // @ts-ignore
     localStorage.setItem("taskList", JSON.stringify(taskState.taskList));
+    // @ts-ignore
   }, [taskState.taskList]);
 
 

@@ -1,7 +1,7 @@
-import { taskType} from "../context/task-context.type";
+import { initialStateType, taskType} from "../context/task-context.type";
 
-export type actionType = | {
-    type: string;
+export interface actionType {
+    type: | "TOGGLE_MODAL" | "ADD_TASK" | "REMOVE_TASK" | "EDIT_TASK";
     payload: taskType | string;
 }
 
