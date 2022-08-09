@@ -1,10 +1,11 @@
 import "./Header.css"
 import logo from "../../assets/target.png"
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { modeProps } from "./Header.types"
+import React from "react"
 
-const Header = ({ mode }) => {
-  const { theme, setTheme } = mode
-
+const Header = ({ theme, setTheme }:modeProps) => {
+ 
   return (
     <nav>
       <Link to='/' className="logo">
@@ -13,13 +14,13 @@ const Header = ({ mode }) => {
       </Link>
       <div className="mode">
         {theme ?
-          <i class="bi bi-sun-fill" onClick={() => {
+          <i className="bi bi-sun-fill" onClick={() => {
             console.log("!wtf")
             setTheme(false)
           }
           }>
           </i> :
-          <i class="bi bi-moon-fill" onClick={() =>
+          <i className="bi bi-moon-fill" onClick={() =>
             setTheme(true)
           }>
           </i>}

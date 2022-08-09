@@ -1,12 +1,14 @@
-import { createContext, useContext, useEffect, useReducer } from "react";
+import React, { createContext, useContext, useEffect, useReducer } from "react";
 import { taskReducer } from "../utils/taskReducer";
-const TaskContext = createContext()
+import { initialStateType ,Props } from "./task-context.type";
+
+const TaskContext = createContext<any | null>(null)
 
 const useTask = () => useContext(TaskContext)
 
-const TaskProvider = ({ children }) => {
-  const taskListFromLocal = JSON.parse(localStorage.getItem("taskList"));
-  const initialState = {
+const TaskProvider: React.FC<Props> = ({ children }) => {
+  const taskListFromLocal = JSON.parse(localStorage.getItem("taskList") || '');
+  const initialState:initialStateType = {
     taskList: taskListFromLocal || [],
     showModal: false,
     showTimer: false,
@@ -21,6 +23,8 @@ const TaskProvider = ({ children }) => {
   useEffect(() => {
     localStorage.setItem("taskList", JSON.stringify(taskState.taskList));
   }, [taskState.taskList]);
+
+
 
   return (
     <TaskContext.Provider value={{ taskState, taskDispatch }}>
