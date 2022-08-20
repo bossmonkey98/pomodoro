@@ -7,7 +7,8 @@ const TaskContext = createContext<any | null>(null)
 const useTask = () => useContext(TaskContext)
 
 const TaskProvider: React.FC<Props> = ({ children }) => {
-  const taskListFromLocal = JSON.parse(localStorage.getItem("taskList") || '');
+  // @ts-ignore
+  const taskListFromLocal = JSON.parse(localStorage.getItem("taskList"));
   const initialState:initialStateType = {
     taskList: taskListFromLocal || [],
     showModal: false,
